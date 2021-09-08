@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mysqldb:
+    image: mysql:5.7
+    environment: 
+      MYSQL_DATABASE: udohbank
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+    volumes: 
+      - "/opt/mysql-data:/var/lib/mysql"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on: 
+      - mysqldb
+    environment: 
+      PMA_HOST: mysqldb
+  app:
+    image: wahyuuk/sample-docker
+    depends_on: 
+      - mysqldb
+      - phpmyadmin
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/udohbank?serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: 123
+    ports:
+      - "80:8080"
