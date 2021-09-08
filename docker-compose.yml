@@ -16,4 +16,4 @@ services:
       SPRING_DATASOURCE_USERNAME: user
       SPRING_DATASOURCE_PASSWORD: 123
     ports:
-      - "8081:8080"
+      - "8080:8081"
