@@ -1,0 +1,6 @@
+mii\co\id\BankAssignment\BankAssignmentApplication.class
+mii\co\id\BankAssignment\controllers\NasabahController.class
+mii\co\id\BankAssignment\models\Nasabah.class
+mii\co\id\BankAssignment\repositories\NasabahRepository.class
+mii\co\id\BankAssignment\config\SwaggerConfiguration.class
+mii\co\id\BankAssignment\services\NasabahService.class
