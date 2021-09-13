@@ -41,7 +41,7 @@ public class Nasabah {
     @Column(name = "tanggal_lahir", nullable = false)
     private Date tanggalLahir;
     
-    @Column(name = "nomor_ktp", nullable = false, length = 16)
+    @Column(name = "nomor_ktp", nullable = false, length = 16, unique = true)
     private String noKtp;
     
     @Column(name = "nomor_handphone", nullable = false, length = 13)
